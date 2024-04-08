@@ -19,7 +19,7 @@
     "test:debug": "node --inspect-brk -r tsconfig-paths/register -r ts-node/register node_modules/.bin/jest --runInBand",
     "test:e2e": "jest --config ./test/jest-e2e.json",
     "docker:build": "docker build --no-cache -t nest-todo-list-app .",
-    "docker:run": "docker run --env-file .env nest-todo-list-app"
+    "docker:run": "docker run --env-file .env -v \"$(pwd):/app\" -v /app/node_modules nest-todo-list-app"
   },
   "dependencies": {
     "@nestjs/common": "^10.0.0",
